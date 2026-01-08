@@ -42,12 +42,13 @@ export const content: Record<Locale, any> = {
       desc: "Short summaries for now. Later we can expand each one into a proper case study.",
       items: [
         {
-          title: "BlackjackSensei",
-          status: "In progress",
-          summary: "Platform to capture gameplay, track hands, and analyze decisions with a clean data model.",
+          title: "Antro Project",
+          status: "In Progress",
+          summary:
+            "Platform designed to digitalize bars and pubs, enabling a more modern connection between venues and their customers through digital experiences.",
           impactTitle: "IMPACT / FOCUS",
           impact:
-            "Focused on reliability first: consistent ingestion, repeatable analysis, and a foundation for future automation.",
+            "Modernization of Paraguay’s nightlife and hospitality sector: improved visibility for venues, digital interaction with customers, and a scalable technological foundation.",
           tags: ["Django", "PostgreSQL", "Tailwind"],
         },
         {
@@ -60,8 +61,8 @@ export const content: Record<Locale, any> = {
         },
         {
           title: "SIGESAWEB",
-          status: "Delivery",
-          summary: "Enterprise web system where I lead development and delivery pipelines.",
+          status: "Delivered",
+          summary: "ERP system where I lead development and delivery pipelines.",
           impactTitle: "IMPACT / FOCUS",
           impact: "Shipping features safely with CI/CD, clean DB practices, and pragmatic refactors.",
           tags: ["PHP", "PostgreSQL", "Jenkins"],
@@ -89,8 +90,9 @@ export const content: Record<Locale, any> = {
       links: [
         { label: "LinkedIn", href: "https://www.linkedin.com/in/sebastian-peralta-249781178" },
         { label: "GitHub", href: "https://github.com/SebPy00" },
+        { label: "Email", href: "mailto:contact@sebtech.dev" },
       ],
-      footer: "© 2026 SebTech — sebtech.dev",
+      footer: "© 2026 SebTech — contact@sebtech.dev",
     },
   },
 
@@ -135,12 +137,13 @@ export const content: Record<Locale, any> = {
       desc: "Resumen corto por ahora. Luego podemos expandir cada uno a un case study.",
       items: [
         {
-          title: "BlackjackSensei",
+          title: "Antro Project",
           status: "En progreso",
-          summary: "Plataforma para capturar gameplay, registrar manos y analizar decisiones con un modelo de datos limpio.",
+          summary:
+            "Plataforma para digitalizar bares y pubs, facilitando un vínculo más moderno entre los establecimientos y sus clientes mediante experiencias digitales.",
           impactTitle: "IMPACTO / FOCO",
           impact:
-            "Primero confiabilidad: ingesta consistente, análisis repetible y base lista para automatizar.",
+            "Modernización del sector gastronómico nocturno en Paraguay: mejor visibilidad para los locales, interacción digital con los clientes y base tecnológica escalable.",
           tags: ["Django", "PostgreSQL", "Tailwind"],
         },
         {
@@ -153,8 +156,8 @@ export const content: Record<Locale, any> = {
         },
         {
           title: "SIGESAWEB",
-          status: "Delivery",
-          summary: "Sistema web empresarial donde lidero desarrollo y pipelines de entrega.",
+          status: "Entregado",
+          summary: "Sistema ERP donde lidero desarrollo y pipelines de entrega.",
           impactTitle: "IMPACTO / FOCO",
           impact: "Entregar features con seguridad: CI/CD, buenas prácticas DB y refactors pragmáticos.",
           tags: ["PHP", "PostgreSQL", "Jenkins"],
@@ -182,8 +185,9 @@ export const content: Record<Locale, any> = {
       links: [
         { label: "LinkedIn", href: "https://www.linkedin.com/in/sebastian-peralta-249781178" },
         { label: "GitHub", href: "https://github.com/SebPy00" },
+        { label: "Correo", href: "mailto:contact@sebtech.dev" },
       ],
-      footer: "© 2026 SebTech — sebtech.dev",
+      footer: "© 2026 SebTech — contact@sebtech.dev",
     },
   },
 };

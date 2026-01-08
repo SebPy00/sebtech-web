@@ -16,7 +16,6 @@ export const content: Record<Locale, any> = {
       style: { label: "Style", value: "Clean architecture, pragmatic delivery." },
       quick: {
         title: "Quick links",
-        domain: "sebtech.dev",
         items: [
           { title: "LinkedIn", desc: "Profile & experience", href: "https://www.linkedin.com/in/sebastian-peralta-249781178" },
           { title: "GitHub", desc: "Projects & code", href: "https://github.com/SebPy00" },
@@ -111,7 +110,6 @@ export const content: Record<Locale, any> = {
       style: { label: "Estilo", value: "Arquitectura limpia, delivery pragmático." },
       quick: {
         title: "Links rápidos",
-        domain: "sebtech.dev",
         items: [
           { title: "LinkedIn", desc: "Perfil y experiencia", href: "https://www.linkedin.com/in/sebastian-peralta-249781178" },
           { title: "GitHub", desc: "Proyectos y código", href: "https://github.com/SebPy00" },

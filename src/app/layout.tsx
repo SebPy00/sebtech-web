@@ -1,46 +1,29 @@
-import Script from "next/script";
 import "./globals.css";
-import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
+import { Inter } from "next/font/google";
+import { LangProvider } from "@/context/LangContext";
 
-const themeInit = `
-(function() {
-  try {
-    var stored = localStorage.getItem('theme'); // 'dark' | 'light' | null
-    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = stored ? stored : (prefersDark ? 'dark' : 'light');
-    var root = document.documentElement;
-    if (theme === 'dark') root.classList.add('dark');
-    else root.classList.remove('dark');
-  } catch (e) {}
-})();
-`;
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-  ),
+export const metadata = {
+  title: "Tech Lead & Software Architect | Systems for Production",
+  description: "Tech Lead y Arquitecto de Software. Backend escalable, PostgreSQL, DevOps y liderazgo técnico.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Inicialización temprana del tema */}
-        <Script id="theme-init" strategy="beforeInteractive">
-          {themeInit}
-        </Script>
-      </head>
+    <html lang="es" className="dark">
+      <body
+        className={`${inter.variable} bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30`}
+      >
+        {/* Background */}
+        <div className="fixed inset-0 pointer-events-none grid-bg z-0" />
+        <div className="fixed inset-0 pointer-events-none glow-top-right z-0" />
 
-      <body>
-        {children}
-
-        {/* Vercel Analytics (App Router) */}
-        <Analytics />
+        <LangProvider>
+          <div className="relative z-10 flex min-h-screen flex-col overflow-x-hidden">
+            {children}
+          </div>
+        </LangProvider>
       </body>
     </html>
   );

@@ -2,7 +2,7 @@ import type { Locale } from "./i18n";
 
 export const content: Record<Locale, any> = {
   en: {
-    nav: { about: "About", work: "Work", stack: "Stack", contact: "Contact" },
+    nav: { about: "About", work: "Work", methodology: "Methodology", stack: "Stack", contact: "Contact" },
     hero: {
       badge: "Available for opportunities",
       location: "Asunción, Paraguay",
@@ -76,6 +76,40 @@ export const content: Record<Locale, any> = {
         },
       ],
     },
+    methodology: {
+      kicker: "PROCESS",
+      title: "Methodology",
+      desc: "How I take ideas to production—fast, clean, and scalable.",
+      quote: "Clean code isn’t aesthetics: it’s clarity, continuity, and sleeping well.",
+      ctaPrimary: "Let’s talk",
+      ctaSecondary: "Download CV",
+      steps: [
+        {
+          title: "Discovery & Analysis",
+          when: "Week 1",
+          desc: "We align on the problem, constraints, and success metrics.",
+          bullets: ["Scope & risks", "Stakeholders", "Technical constraints"],
+        },
+        {
+          title: "Architecture",
+          when: "Week 2–3",
+          desc: "Blueprint for data, APIs, and deployment.",
+          bullets: ["DB design", "API contracts", "Infra decisions"],
+        },
+        {
+          title: "Build & Iterate",
+          when: "Week 4–8",
+          desc: "Short loops, visible progress, pragmatic testing.",
+          bullets: ["Deliver in slices", "Review & refactor", "Automations where it matters"],
+        },
+        {
+          title: "Launch & Harden",
+          when: "Week 9",
+          desc: "Performance, security, CI/CD and monitoring to ship safely.",
+          bullets: ["CI/CD", "Monitoring", "Security checks"],
+        },
+      ],
+    },
     stack: {
       kicker: "STACK",
       title: "Tools I use often",
@@ -96,7 +130,7 @@ export const content: Record<Locale, any> = {
   },
 
   es: {
-    nav: { about: "Sobre mí", work: "Proyectos", stack: "Stack", contact: "Contacto" },
+    nav: { about: "Sobre mí", work: "Proyectos", methodology: "Metodología", stack: "Stack", contact: "Contacto" },
     hero: {
       badge: "Disponible para oportunidades",
       location: "Asunción, Paraguay",

@@ -1,9 +1,21 @@
-import { redirect } from "next/navigation";
-import { cookies } from "next/headers";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/sections/Hero";
+import Expertise from "@/components/sections/Expertise";
+import Projects from "@/components/sections/Projects";
+import Contact from "@/components/sections/Contact";
 
-export default async function RootPage() {
-  const cookieStore = await cookies();
-  const lang = cookieStore.get("lang")?.value;
-
-  redirect(lang === "es" ? "/es" : "/en");
+export default function Page() {
+  return (
+    <>
+      <Header />
+      <main className="flex-1">
+        <Hero />
+        <Expertise />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
 }

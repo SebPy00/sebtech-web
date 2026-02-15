@@ -1,6 +1,7 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, { createContext, useContext, useEffect, useMemo } from "react";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
 export type Lang = "es" | "en";
 
@@ -12,23 +13,42 @@ type LangCtx = {
 
 const Ctx = createContext<LangCtx | null>(null);
 
+function normalizeLang(x: unknown): Lang {
+  return x === "en" ? "en" : "es";
+}
+
 export function LangProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("es");
+  const params = useParams(); // { lang: "es" | "en" }
+  const router = useRouter();
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const saved = (localStorage.getItem("lang") as Lang | null) ?? null;
-    if (saved === "es" || saved === "en") setLangState(saved);
-  }, []);
+  const lang = normalizeLang(params?.lang);
 
+  // Mantener <html lang="..."> correcto
   useEffect(() => {
     document.documentElement.lang = lang;
-    localStorage.setItem("lang", lang);
+    // opcional: persistencia de preferencia
+    try {
+      localStorage.setItem("lang", lang);
+    } catch {}
   }, [lang]);
+
+  const setLang = (next: Lang) => {
+    if (!pathname) return;
+
+    const parts = pathname.split("/");
+    // ["", "es", ...]
+    parts[1] = next;
+    const nextPath = parts.join("/") || `/${next}`;
+
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+    router.push(`${nextPath}${hash}`);
+  };
 
   const value = useMemo<LangCtx>(
     () => ({
       lang,
-      setLang: setLangState,
+      setLang,
       t: (es, en) => (lang === "es" ? es : en),
     }),
     [lang]

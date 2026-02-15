@@ -5,6 +5,17 @@ import Expertise from "@/components/sections/Expertise";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 
-export default function Page() {
-  return null;
+export default function LangHome() {
+  return (
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <Expertise />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
 }

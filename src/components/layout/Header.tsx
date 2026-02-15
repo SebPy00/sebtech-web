@@ -94,7 +94,7 @@ export default function Header() {
 
           {/* Lang toggle: ideal que llame a setLangInUrl internamente.
               Si tu LangToggle hoy solo cambia contexto, podés pasarle props. */}
-          <LangToggle onChangeLang={setLangInUrl} value={lang} />
+          <LangToggle />
 
           <a
             className="hidden sm:flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-xs font-bold text-white hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 active:scale-95"

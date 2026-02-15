@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
+      <main className="flex-1">
         <Hero />
         <Expertise />
         <Projects />

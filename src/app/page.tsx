@@ -1,8 +1,12 @@
+// page.tsx
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import Hero from "@/components/sections/Hero";
-import Expertise from "@/components/sections/Expertise";
-import Projects from "@/components/sections/Projects";
+import HeroFactory from "@/components/sections/HeroFactory";
+import Solutions from "@/components/sections/Solutions";
+import Results from "@/components/sections/Results";
+import Process from "@/components/sections/Process";
+import Company from "@/components/sections/Company";
+import FinalCTA from "@/components/sections/FinalCTA";
 import Contact from "@/components/sections/Contact";
 
 export default function Page() {
@@ -10,9 +14,12 @@ export default function Page() {
     <>
       <Header />
       <main className="flex-1">
-        <Hero />
-        <Expertise />
-        <Projects />
+        <HeroFactory />
+        <Solutions />
+        <Results />
+        <Process />
+        <Company />
+        <FinalCTA />
         <Contact />
       </main>
       <Footer />

@@ -1,3 +1,4 @@
+// content.ts
 import type { Locale } from "./i18n";
 
 export const content: Record<Locale, any> = {

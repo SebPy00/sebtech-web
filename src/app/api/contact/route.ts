@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       from: "SebTech <contact@sebtech.dev>",
       to: "sebpy060200@gmail.com",
       replyTo: email,
-      subject: "Nueva consulta desde sebtech.dev",
+      subject: `${name} - Consulta desde sebtech.dev`,
       html: `
         <h2>Nueva consulta desde sebtech.dev</h2>
         <p><strong>Nombre:</strong> ${name}</p>

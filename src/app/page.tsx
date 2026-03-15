@@ -18,7 +18,7 @@ export default function Page() {
         <Solutions />
         <Results />
         <Process />
-        {/* <Company /> */}
+        <Company />
         <FinalCTA />
         <Contact />
       </main>

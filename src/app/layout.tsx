@@ -6,12 +6,12 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
   title: {
-    default: "SebTech - Software Factory",
+    default: "SebTech | Desarrollo de Software, APIs y Automatización en Paraguay",
     template: "%s | SebTech",
   },
 
   description:
-    "SebTech es una software factory especializada en plataformas, APIs, automatización de procesos y sistemas empresariales.",
+    "SebTech es una software factory especializada en desarrollo de software, APIs, automatización de procesos y plataformas empresariales en Paraguay.",
 
   keywords: [
     "software factory",
@@ -28,9 +28,9 @@ export const metadata = {
   authors: [{ name: "Sebastián Peralta" }],
 
   openGraph: {
-    title: "SebTech - Software Factory",
+    title: "SebTech | Desarrollo de Software, APIs y Automatización en Paraguay",
     description:
-      "Construimos plataformas, APIs y automatización para operaciones reales.",
+      "SebTech es una software factory especializada en desarrollo de software, APIs, automatización de procesos y plataformas empresariales en Paraguay.",
     url: "https://sebtech.dev",
     siteName: "SebTech",
     images: [
@@ -46,9 +46,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "SebTech - Software Factory",
+    title: "SebTech | Desarrollo de Software, APIs y Automatización en Paraguay",
     description:
-      "Custom software, APIs y automatización para empresas.",
+      "SebTech es una software factory especializada en desarrollo de software, APIs, automatización de procesos y plataformas empresariales en Paraguay.",
     images: ["/og.png"],
   },
 

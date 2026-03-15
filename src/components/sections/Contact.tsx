@@ -247,6 +247,14 @@ export default function Contact() {
                   )}
                 />
               </div>
+              
+              <input
+                type="text"
+                name="company_website"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+              />
 
               <button
                 className="h-12 w-full rounded-xl bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-70"

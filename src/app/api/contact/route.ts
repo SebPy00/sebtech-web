@@ -15,10 +15,10 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: "from: "SebTech <contact@sebtech.dev>"",
+      from: "SebTech <contact@sebtech.dev>",
       to: "contact@sebtech.dev",
-      reply_to: email,
-      subject: `Nueva consulta desde sebtech.dev`,
+      replyTo: email,
+      subject: "Nueva consulta desde sebtech.dev",
       html: `
         <h2>Nueva consulta desde sebtech.dev</h2>
         <p><strong>Nombre:</strong> ${name}</p>

@@ -5,13 +5,54 @@ import { LangProvider } from "@/context/LangContext";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
-  title: "SebTech - Software Factory",
-  description: "Software para operaciones reales",
+  title: {
+    default: "SebTech - Software Factory",
+    template: "%s | SebTech",
+  },
+
+  description:
+    "SebTech es una software factory especializada en plataformas, APIs, automatización de procesos y sistemas empresariales.",
+
+  keywords: [
+    "software factory",
+    "custom software",
+    "desarrollo de software",
+    "automatización de procesos",
+    "backend development",
+    "Django",
+    "Next.js",
+    "software Paraguay",
+    "software company Paraguay",
+  ],
+
+  authors: [{ name: "Sebastián Peralta" }],
+
   openGraph: {
     title: "SebTech - Software Factory",
-    description: "Software para operaciones reales",
+    description:
+      "Construimos plataformas, APIs y automatización para operaciones reales.",
+    url: "https://sebtech.dev",
+    siteName: "SebTech",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "es_ES",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "SebTech - Software Factory",
+    description:
+      "Custom software, APIs y automatización para empresas.",
     images: ["/og.png"],
   },
+
+  metadataBase: new URL("https://sebtech.dev"),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

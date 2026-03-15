@@ -1,6 +1,7 @@
 // Header.tsx
 "use client";
 
+import { useEffect, useState } from "react";
 import LangToggle from "@/components/ui/LangToggle";
 import { useLang } from "@/context/LangContext";
 import { Building2, Linkedin, CalendarDays } from "lucide-react";
@@ -12,6 +13,14 @@ const CALENDLY_URL = "#contact";
 export default function Header() {
   const { t, lang } = useLang();
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const hrefWithHash = (hash: string) => {
     const base = pathname || `/${lang}`;
@@ -19,11 +28,21 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
+    <header
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        scrolled
+          ? "border-b border-slate-200/80 bg-white/85 backdrop-blur-md shadow-sm"
+          : "border-b border-transparent bg-white/70 backdrop-blur-md"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-12">
         <a href={`/${lang}`} className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm">
-            <Building2 size={18} />
+            <img
+              src="/icon.svg"
+              alt="SebTech"
+              className="h-9"
+            />
           </div>
 
           <div className="leading-tight">
@@ -88,7 +107,7 @@ export default function Header() {
             href={CALENDLY_URL}
           >
             <CalendarDays size={16} />
-            {t("Agendar llamada", "Book a call")}
+            {t("Agendar llamada estratégica", "Book a strategy call")}
           </a>
         </div>
       </div>

@@ -81,11 +81,13 @@ export default function Footer() {
                 GitHub
               </a>
 
+              <p></p>
+
               <a
-                href={`/#solutions`}
+                href={`/#results`}
                 className="transition hover:text-white"
               >
-                {t("Ver soluciones", "View solutions")}
+                {t("Ver sistemas", "View systems")}
               </a>
             </div>
           </div>

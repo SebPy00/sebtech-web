@@ -1,3 +1,4 @@
+// LangToggle.tsx
 "use client";
 
 import { useLang } from "@/context/LangContext";
@@ -5,24 +6,30 @@ import { useLang } from "@/context/LangContext";
 export default function LangToggle() {
   const { lang, setLang } = useLang();
 
-  const base =
-    "px-3 py-1 text-[10px] font-bold rounded-full transition-all hover:text-white";
-  const active = "bg-primary text-white";
-  const inactive = "text-slate-500";
-
   return (
-    <div className="flex items-center bg-white/5 rounded-full p-1 border border-white/10">
+    <div className="flex overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
       <button
         type="button"
-        className={`${base} ${lang === "es" ? active : inactive}`}
         onClick={() => setLang("es")}
+        className={`px-3 py-1.5 text-xs font-bold transition ${
+          lang === "es"
+            ? "bg-blue-600 text-white"
+            : "text-slate-600 hover:bg-slate-100"
+        }`}
+        aria-pressed={lang === "es"}
       >
         ES
       </button>
+
       <button
         type="button"
-        className={`${base} ${lang === "en" ? active : inactive}`}
         onClick={() => setLang("en")}
+        className={`px-3 py-1.5 text-xs font-bold transition ${
+          lang === "en"
+            ? "bg-blue-600 text-white"
+            : "text-slate-600 hover:bg-slate-100"
+        }`}
+        aria-pressed={lang === "en"}
       >
         EN
       </button>

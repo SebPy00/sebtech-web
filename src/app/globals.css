@@ -10,3 +10,11 @@
 .glow-top-right {
   background: radial-gradient(circle at top right, rgba(108, 43, 238, 0.12), transparent 50%);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 96px;
+}

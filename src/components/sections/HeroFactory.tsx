@@ -41,23 +41,46 @@ export default function HeroFactory() {
             )}
           </p>
 
+          <div className="mt-6 flex flex-wrap gap-2">
+            {[
+              t("ERP / CRM", "ERP / CRM"),
+              t("Automatización", "Automation"),
+              t("Integraciones", "Integrations"),
+              t("Marketplaces", "Marketplaces"),
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#results"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-base font-bold text-white shadow-[0_16px_40px_rgba(37,99,235,0.28)] transition-all hover:-translate-y-0.5 hover:bg-blue-700"
-            >
-              {t("Ver resultados", "See results")}
-              <ArrowRight size={18} />
-            </a>
-
-            <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-4 text-base font-bold text-slate-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:bg-slate-50"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-base font-bold text-white shadow-[0_16px_40px_rgba(37,99,235,0.28)] transition-all hover:-translate-y-0.5 hover:bg-blue-700"
             >
               <CalendarDays size={18} />
               {t("Agendar llamada estratégica", "Book a strategy call")}
             </a>
+
+            <a
+              href="#results"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-4 text-base font-bold text-slate-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:bg-slate-50"
+            >
+              {t("Ver sistemas que construimos", "See systems we build")}
+              <ArrowRight size={18} />
+            </a>
           </div>
+
+          <p className="mt-4 text-sm text-slate-500">
+            {t(
+              "Enfoque en plataformas internas, automatización e integración de sistemas.",
+              "Focused on internal platforms, automation and system integrations."
+            )}
+          </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm backdrop-blur">

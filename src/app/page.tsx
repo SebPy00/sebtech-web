@@ -1,4 +1,4 @@
-// page.tsx
+// pa
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroFactory from "@/components/sections/HeroFactory";
@@ -18,7 +18,7 @@ export default function Page() {
         <Solutions />
         <Results />
         <Process />
-        <Company />
+        {/* <Company /> */}
         <FinalCTA />
         <Contact />
       </main>

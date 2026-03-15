@@ -1,122 +1,202 @@
 "use client";
 
 import { useLang } from "@/context/LangContext";
-import { AtSign, Github, FileText } from "lucide-react";
+import { Mail, Linkedin, CalendarDays, Building2 } from "lucide-react";
 
 export default function Contact() {
   const { t } = useLang();
 
   return (
-    <section id="contact" className="px-6 py-24 bg-background-dark">
+    <section id="contact" className="bg-slate-950 px-6 py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
+        <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
           {/* LEFT SIDE */}
           <div>
-            <h2 className="text-4xl font-bold text-white mb-6">
-              {t("Trabajemos juntos", "Let's work together")}
+            <div className="mb-4 inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-blue-300">
+              {t("Contacto", "Contact")}
+            </div>
+
+            <h2 className="mb-6 max-w-xl text-4xl font-black tracking-tight text-white md:text-5xl">
+              {t(
+                "Conversemos sobre tu operación o tu próximo sistema.",
+                "Let’s talk about your operation or your next system."
+              )}
             </h2>
 
-            <p className="text-lg text-slate-400 mb-10 max-w-md">
+            <p className="mb-10 max-w-xl text-lg leading-8 text-slate-400">
               {t(
-                "¿Buscas escalar tu equipo o resolver un cuello de botella crítico? Escríbeme y analicemos tu situación.",
-                "Looking to scale your team or solve a critical technical bottleneck? Reach out and let's analyze your situation."
+                "Si estás evaluando una plataforma, automatizando procesos o integrando sistemas existentes, podemos revisar tu caso y definir el mejor siguiente paso.",
+                "If you are evaluating a platform, automating processes or integrating existing systems, we can review your case and define the best next step."
               )}
             </p>
 
-            <div className="flex flex-col gap-6">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10 text-blue-300">
+                  <Building2 size={18} />
+                </div>
 
-              {/* LINKEDIN */}
+                <p className="text-sm font-bold uppercase tracking-[0.14em] text-slate-500">
+                  {t("Qué tipo de proyectos", "What kind of projects")}
+                </p>
+
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  {t(
+                    "Plataformas internas, automatización operativa, marketplaces, trazabilidad e integraciones entre sistemas.",
+                    "Internal platforms, operational automation, marketplaces, traceability and system integrations."
+                  )}
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10 text-blue-300">
+                  <CalendarDays size={18} />
+                </div>
+
+                <p className="text-sm font-bold uppercase tracking-[0.14em] text-slate-500">
+                  {t("Siguiente paso", "Next step")}
+                </p>
+
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  {t(
+                    "Una conversación inicial para entender contexto, alcance y prioridades antes de proponer una solución.",
+                    "An initial conversation to understand context, scope and priorities before proposing a solution."
+                  )}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-10 flex flex-col gap-5">
+              <a
+                href="mailto:contact@sebtech.dev"
+                className="group flex items-center gap-4 text-slate-300 transition-all hover:text-white"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-all group-hover:border-blue-400/40 group-hover:bg-blue-500/10">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
+                    {t("Correo", "Email")}
+                  </p>
+                  <p className="text-sm font-medium">contact@sebtech.dev</p>
+                </div>
+              </a>
+
               <a
                 href="https://www.linkedin.com/in/sebastian-peralta-249781178"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-4 text-slate-300 hover:text-white transition-all group"
+                className="group flex items-center gap-4 text-slate-300 transition-all hover:text-white"
               >
-                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-primary/20 group-hover:border-primary/50">
-                  <AtSign size={18} />
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-all group-hover:border-blue-400/40 group-hover:bg-blue-500/10">
+                  <Linkedin size={18} />
                 </div>
-                <span className="font-medium">LinkedIn</span>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
+                    LinkedIn
+                  </p>
+                  <p className="text-sm font-medium">
+                    {t(
+                      "Perfil profesional y contacto",
+                      "Professional profile and contact"
+                    )}
+                  </p>
+                </div>
               </a>
 
-              {/* GITHUB */}
               <a
-                href="https://github.com/SebPy00"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-4 text-slate-300 hover:text-white transition-all group"
+                href="#"
+                className="group flex items-center gap-4 text-slate-300 transition-all hover:text-white"
               >
-                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-primary/20 group-hover:border-primary/50">
-                  <Github size={18} />
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-all group-hover:border-blue-400/40 group-hover:bg-blue-500/10">
+                  <CalendarDays size={18} />
                 </div>
-                <span className="font-medium">GitHub</span>
-              </a>
-
-              {/* CV */}
-              <a
-                href="/cv.pdf"
-                className="flex items-center gap-4 text-slate-300 hover:text-white transition-all group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-primary/20 group-hover:border-primary/50">
-                  <FileText size={18} />
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
+                    {t("Reunión", "Meeting")}
+                  </p>
+                  <p className="text-sm font-medium">
+                    {t(
+                      "Agendar una llamada estratégica",
+                      "Book a strategy call"
+                    )}
+                  </p>
                 </div>
-                <span className="font-medium font-bold text-primary">
-                  {t("Descargar CV (PDF)", "Download Curriculum Vitae (PDF)")}
-                </span>
               </a>
-
             </div>
           </div>
 
           {/* RIGHT SIDE FORM */}
-          <div className="p-8 rounded-2xl bg-white/[0.03] border border-white/5">
-            <form className="space-y-5" onSubmit={(e)=>e.preventDefault()}>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.25)]">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-white">
+                {t("Cuéntanos qué estás construyendo", "Tell us what you are building")}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-slate-400">
+                {t(
+                  "Comparte una idea general del proyecto, el problema que quieres resolver o el sistema que necesitas mejorar.",
+                  "Share a general idea of the project, the problem you want to solve or the system you need to improve."
+                )}
+              </p>
+            </div>
 
+            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
                   {t("Nombre", "Name")}
                 </label>
                 <input
-                  className="w-full bg-white/5 border-white/10 rounded-lg text-white focus:ring-primary focus:border-primary px-4 py-3"
-                  placeholder={t("Tu nombre", "Your name")}
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder={t("Tu nombre o empresa", "Your name or company")}
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-                  {t("Correo Electrónico", "Email")}
+                <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
+                  {t("Correo electrónico", "Email")}
                 </label>
                 <input
                   type="email"
-                  className="w-full bg-white/5 border-white/10 rounded-lg text-white focus:ring-primary focus:border-primary px-4 py-3"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                   placeholder="john@company.com"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
+                  {t("Tipo de necesidad", "Type of need")}
+                </label>
+                <input
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder={t(
+                    "Plataforma, automatización, integración, MVP, mejora de sistema...",
+                    "Platform, automation, integration, MVP, system improvement..."
+                  )}
+                />
+              </div>
+
+              <div>
+                <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
                   {t("Mensaje", "Message")}
                 </label>
                 <textarea
-                  rows={4}
-                  className="w-full bg-white/5 border-white/10 rounded-lg text-white focus:ring-primary focus:border-primary px-4 py-3"
+                  rows={5}
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                   placeholder={t(
-                    "Contame qué necesitás y en qué plazo.",
-                    "Tell me what you need and your timeline."
+                    "Cuéntanos brevemente qué necesitas, en qué etapa estás y si tienes una fecha objetivo.",
+                    "Briefly tell us what you need, what stage you are in and whether you have a target date."
                   )}
                 />
               </div>
 
               <button
-                className="w-full h-12 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
+                className="h-12 w-full rounded-xl bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-700"
                 type="submit"
               >
-                {t("Enviar Mensaje", "Send Message")}
+                {t("Enviar consulta", "Send inquiry")}
               </button>
-
             </form>
           </div>
-
         </div>
       </div>
     </section>

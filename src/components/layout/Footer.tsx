@@ -82,7 +82,7 @@ export default function Footer() {
               </a>
 
               <a
-                href={`/${lang}#solutions`}
+                href={`/#solutions`}
                 className="transition hover:text-white"
               >
                 {t("Ver soluciones", "View solutions")}

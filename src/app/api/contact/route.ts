@@ -20,7 +20,7 @@ export async function POST(req: Request) {
       replyTo: email,
       subject: `${name} - Consulta desde sebtech.dev`,
       html: `
-        <h2>Nueva consulta desde sebtech.dev</h2>
+        <h2>Planteo de nuevo proyecto</h2>
         <p><strong>Nombre:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Tipo de necesidad:</strong> ${need || "-"}</p>

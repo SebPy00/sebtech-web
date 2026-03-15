@@ -52,12 +52,6 @@ export default function Footer() {
                 Asunción, Paraguay
               </p>
 
-              <a
-                href={`/${lang}#contact`}
-                className="inline-flex items-center rounded-lg border border-slate-800 px-3 py-2 font-semibold text-slate-300 transition hover:border-slate-700 hover:bg-slate-900 hover:text-white"
-              >
-                {t("Solicitar reunión", "Request a meeting")}
-              </a>
             </div>
           </div>
 

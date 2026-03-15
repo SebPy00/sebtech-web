@@ -2,9 +2,58 @@
 
 import { useLang } from "@/context/LangContext";
 import { Mail, Linkedin, CalendarDays, Building2 } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
   const { t } = useLang();
+
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    setLoading(true);
+    setSent(false);
+    setError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      need: formData.get("need"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setSent(true);
+      form.reset();
+    } catch (err) {
+      setError(
+        t(
+          "No se pudo enviar el mensaje. Intenta de nuevo o escribe a contact@sebtech.dev.",
+          "Could not send the message. Please try again or email contact@sebtech.dev."
+        )
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <section id="contact" className="bg-slate-950 px-6 py-24">
@@ -130,7 +179,10 @@ export default function Contact() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.25)]">
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-white">
-                {t("Cuéntanos qué estás construyendo", "Tell us what you are building")}
+                {t(
+                  "Cuéntanos qué estás construyendo",
+                  "Tell us what you are building"
+                )}
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-400">
                 {t(
@@ -140,12 +192,14 @@ export default function Contact() {
               </p>
             </div>
 
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
                   {t("Nombre", "Name")}
                 </label>
                 <input
+                  name="name"
+                  required
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                   placeholder={t("Tu nombre o empresa", "Your name or company")}
                 />
@@ -156,7 +210,9 @@ export default function Contact() {
                   {t("Correo electrónico", "Email")}
                 </label>
                 <input
+                  name="email"
                   type="email"
+                  required
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                   placeholder="john@company.com"
                 />
@@ -167,6 +223,7 @@ export default function Contact() {
                   {t("Tipo de necesidad", "Type of need")}
                 </label>
                 <input
+                  name="need"
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                   placeholder={t(
                     "Plataforma, automatización, integración, MVP, mejora de sistema...",
@@ -180,7 +237,9 @@ export default function Contact() {
                   {t("Mensaje", "Message")}
                 </label>
                 <textarea
+                  name="message"
                   rows={5}
+                  required
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                   placeholder={t(
                     "Cuéntanos brevemente qué necesitas, en qué etapa estás y si tienes una fecha objetivo.",
@@ -190,11 +249,29 @@ export default function Contact() {
               </div>
 
               <button
-                className="h-12 w-full rounded-xl bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-700"
+                className="h-12 w-full rounded-xl bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-70"
                 type="submit"
+                disabled={loading}
               >
-                {t("Enviar consulta", "Send inquiry")}
+                {loading
+                  ? t("Enviando...", "Sending...")
+                  : t("Enviar consulta", "Send inquiry")}
               </button>
+
+              {sent && (
+                <p className="text-sm text-emerald-400">
+                  {t(
+                    "Consulta enviada correctamente. Te responderemos en contact@sebtech.dev.",
+                    "Inquiry sent successfully. We will reply from contact@sebtech.dev."
+                  )}
+                </p>
+              )}
+
+              {error && (
+                <p className="text-sm text-red-400">
+                  {error}
+                </p>
+              )}
             </form>
           </div>
         </div>

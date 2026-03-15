@@ -261,8 +261,8 @@ export default function Contact() {
               {sent && (
                 <p className="text-sm text-emerald-400">
                   {t(
-                    "Consulta enviada correctamente. Te responderemos en contact@sebtech.dev.",
-                    "Inquiry sent successfully. We will reply from contact@sebtech.dev."
+                    "Consulta enviada correctamente. Te responderemos en la brevedad posible.",
+                    "Inquiry sent successfully. We will reply as soon as possible."
                   )}
                 </p>
               )}

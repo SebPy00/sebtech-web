@@ -58,15 +58,15 @@ export default function Header() {
         <nav className="hidden items-center gap-8 md:flex">
           <a
             className="text-sm font-semibold text-slate-600 transition-colors hover:text-blue-600"
-            href={hrefWithHash("#solutions")}
+            href={hrefWithHash("#systems")}
           >
-            {t("Soluciones", "Solutions")}
+            {t("Sistemas", "Systems")}
           </a>
           <a
             className="text-sm font-semibold text-slate-600 transition-colors hover:text-blue-600"
-            href={hrefWithHash("#results")}
+            href={hrefWithHash("#solutions")}
           >
-            {t("Resultados", "Results")}
+            {t("Soluciones", "Solutions")}
           </a>
           <a
             className="text-sm font-semibold text-slate-600 transition-colors hover:text-blue-600"
@@ -78,7 +78,7 @@ export default function Header() {
             className="text-sm font-semibold text-slate-600 transition-colors hover:text-blue-600"
             href={hrefWithHash("#company")}
           >
-            {t("SebTech", "SebTech")}
+            {t("Nosotros", "About us")}
           </a>
           <a
             className="text-sm font-semibold text-slate-600 transition-colors hover:text-blue-600"

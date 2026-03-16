@@ -84,7 +84,7 @@ export default function Footer() {
               <p></p>
 
               <a
-                href={`/#results`}
+                href={`/#systems`}
                 className="transition hover:text-white"
               >
                 {t("Ver sistemas", "View systems")}

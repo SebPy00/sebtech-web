@@ -67,7 +67,7 @@ export default function HeroFactory() {
             </a>
 
             <a
-              href="#results"
+              href="#systems"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-4 text-base font-bold text-slate-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:bg-slate-50"
             >
               {t("Ver sistemas que construimos", "See systems we build")}

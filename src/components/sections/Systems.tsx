@@ -3,12 +3,12 @@
 import { useLang } from "@/context/LangContext";
 import { ArrowUpRight } from "lucide-react";
 
-export default function Results() {
+export default function Systems() {
   const { t } = useLang();
 
   return (
     <section
-      id="results"
+      id="systems"
       className="border-t border-slate-100 bg-gradient-to-b from-white to-slate-50 py-24"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-12">

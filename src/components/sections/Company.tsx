@@ -15,7 +15,7 @@ export default function Company() {
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div>
             <div className="mb-4 inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-blue-700">
-              {t("SebTech", "SebTech")}
+              {t("Nosotros", "About us")}
             </div>
 
             <h2 className="max-w-3xl text-4xl font-black tracking-tight text-slate-900 md:text-5xl">

@@ -23,7 +23,7 @@ export default function Header() {
   }, []);
 
   const hrefWithHash = (hash: string) => {
-    const base = pathname || `/${lang}`;
+    const base = pathname || `/`;
     return `${base.split("#")[0]}${hash}`;
   };
 
@@ -36,7 +36,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-12">
-        <a href={`/${lang}`} className="flex items-center gap-3">
+        <a href={`/`} className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm">
             <img
               src="/icon.svg"

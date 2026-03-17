@@ -3,10 +3,10 @@
 import { useLang } from "@/context/LangContext";
 import {
   ArrowRight,
-  CalendarDays,
   Sparkles,
   ShieldCheck,
   Layers3,
+  Mail,
 } from "lucide-react";
 
 export default function HeroFactory() {
@@ -59,19 +59,19 @@ export default function HeroFactory() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-base font-bold text-white shadow-[0_16px_40px_rgba(37,99,235,0.28)] transition-all hover:-translate-y-0.5 hover:bg-blue-700"
-            >
-              <CalendarDays size={18} />
-              {t("Agendar llamada estratégica", "Book a strategy call")}
-            </a>
-
-            <a
               href="#systems"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-4 text-base font-bold text-slate-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:bg-slate-50"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-base font-bold text-white shadow-[0_16px_40px_rgba(37,99,235,0.28)] transition-all hover:-translate-y-0.5 hover:bg-blue-700"
             >
               {t("Ver sistemas que construimos", "See systems we build")}
               <ArrowRight size={18} />
+            </a>
+
+            <a
+              href="#finalcta"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-4 text-base font-bold text-slate-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:bg-slate-50"
+            >
+              <Mail size={18} />
+              {t("Contactanos", "Contact us")}
             </a>
           </div>
 

@@ -2,12 +2,13 @@
 
 import { useLang } from "@/context/LangContext";
 import { ArrowRight, CalendarDays } from "lucide-react";
+import { BOOKING_URL } from "@/lib/config";
 
 export default function FinalCTA() {
   const { t } = useLang();
 
   return (
-    <section className="border-t border-slate-100 bg-gradient-to-b from-white to-slate-50 py-24">
+    <section id="finalcta" className="border-t border-slate-100 bg-gradient-to-b from-white to-slate-50 py-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-12">
         <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-950 px-8 py-16 text-center shadow-[0_30px_80px_rgba(15,23,42,0.18)] md:px-16">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.28),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.18),transparent_24%)]" />
@@ -43,7 +44,9 @@ export default function FinalCTA() {
               </a>
 
               <a
-                href="#contact"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 font-semibold text-white transition-all hover:bg-white/10"
               >
                 <CalendarDays size={16} />

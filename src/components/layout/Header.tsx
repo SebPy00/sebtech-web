@@ -6,9 +6,9 @@ import LangToggle from "@/components/ui/LangToggle";
 import { useLang } from "@/context/LangContext";
 import { Building2, Linkedin, CalendarDays } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { BOOKING_URL } from "@/lib/config";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/sebastian-peralta-249781178";
-const CALENDLY_URL = "#contact";
 
 export default function Header() {
   const { t, lang } = useLang();
@@ -104,7 +104,9 @@ export default function Header() {
 
           <a
             className="hidden h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700 sm:inline-flex"
-            href={CALENDLY_URL}
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noreferrer"
           >
             <CalendarDays size={16} />
             {t("Agendar llamada estratégica", "Book a strategy call")}

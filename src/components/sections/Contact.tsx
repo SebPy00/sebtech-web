@@ -3,6 +3,7 @@
 import { useLang } from "@/context/LangContext";
 import { Mail, Linkedin, CalendarDays, Building2 } from "lucide-react";
 import { useState } from "react";
+import { BOOKING_URL } from "@/lib/config";
 
 export default function Contact() {
   const { t } = useLang();
@@ -154,7 +155,9 @@ export default function Contact() {
               </a>
 
               <a
-                href="#"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="group flex items-center gap-4 text-slate-300 transition-all hover:text-white"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-all group-hover:border-blue-400/40 group-hover:bg-blue-500/10">
